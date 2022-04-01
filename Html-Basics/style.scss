@@ -1,0 +1,15 @@
+@import "/home/hunter/Programming/React-Training-Capgemini/_variavles.scss";
+// $primary: red;
+
+div {
+  @include set-background(red, white, 40px);
+  color: white;
+
+  p {
+    color: $secondary;
+  }
+
+  h1 {
+    color: aliceblue;
+  }
+}

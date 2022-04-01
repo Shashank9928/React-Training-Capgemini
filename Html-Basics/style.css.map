@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,GAAG,CAAC;ECGF,gBAAgB,EDFQ,GAAG;ECG3B,KAAK,EDHwB,KAAK;ECIlC,SAAS,EDJ2B,IAAI;EACxC,KAAK,EAAE,KAAK;CASb;;AAXD,AAIE,GAJC,CAID,CAAC,CAAC;EACA,KAAK,ECPG,IAAI;CDQb;;AANH,AAQE,GARC,CAQD,EAAE,CAAC;EACD,KAAK,EAAE,SAAS;CACjB",
+    "sources": [
+        "style.scss",
+        "_variavles.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

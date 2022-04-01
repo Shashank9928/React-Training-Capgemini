@@ -1,0 +1,16 @@
+$primary: gray;
+$secondary: aqua;
+$succcess: green;
+$failure: red;
+
+@mixin set-background($background, $color, $size) {
+  background-color: $background;
+  color: $color;
+  font-size: $size;
+}
+
+@mixin flex-center() {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
