@@ -1,0 +1,40 @@
+#root {
+  width: 40%;
+  margin: 0 auto;
+  padding: auto;
+}
+
+.containerDisplay {
+  height: 100%;
+  padding: 0% 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+p {
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 5%;
+}
+
+.numeros {
+  font-size: 0.90em;
+}
+
+.resultado {
+  overflow: auto;
+  font-size: 1.5em;
+}
+
+.MuiGrid-spacing-xs-3 {
+  margin: -3px !important;
+}
+/*# sourceMappingURL=Style.css.map */
