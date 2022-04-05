@@ -9,19 +9,22 @@ import React from "react";
 // import Styles from "./components/StyleSheet/Styles"
 // import Hooks from "./components/Hooks/Hooks";
 // import Checkbox from "./components/MatrialUI/CheckBox";
-import AppBarComponent from "./components/MatrialUI/AppBar";
-import GridComponent from "./components/MatrialUI/Grid";
+// import AppBarComponent from "./components/MatrialUI/AppBar";
+// import GridComponent from "./components/MatrialUI/Grid";
 // import PureComp from "./components/PureComponent/Purecomponent";
 // import RegComp from "./components/PureComponent/RegularComponent";
 // import ParentComponent from "./components/PureComponent/ParentComponent";
 
 
-import ParentError from "./components/ErrorHandling/ParentHandler";
+// import ParentError from "./components/ErrorHandling/ParentHandler";
+
+
+import ReactParentHook from "./components/ReactHooks/ReactParentHook";
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       {/* <Header name="Hunter"  bgColor="black" color="#fff" /> */}
       {/* <Sidebar />
       <Main 
@@ -42,16 +45,18 @@ function App() {
 
       {/* <Checkbox /> */}
 
-      <AppBarComponent />
+      {/* <AppBarComponent /> */}
 
-      <GridComponent />
+      {/* <GridComponent /> */}
 
       {/* <PureComp /> */}
 
       {/* <RegComp /> */}
 
       {/* <ParentComponent /> */}
-      <ParentError />
+      {/* <ParentError /> */}
+
+      <ReactParentHook />
     </div>
   );
 }
