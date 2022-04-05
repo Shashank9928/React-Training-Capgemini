@@ -1,5 +1,5 @@
 import ChildComp from "./childComponent";
-
+import React from "react";
 function FunctionalComponent() {
   return (
     <div className="container" style={{color:"black"}} >
