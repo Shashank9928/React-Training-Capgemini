@@ -18,10 +18,10 @@ function CalculatorBody(props) {
                     <Button variant="contained" color="secondary" fullWidth value={'C'} onClick={(e) => props.calcula(e.currentTarget.value)}> C </Button>
                 </Grid>
                 <Grid item xs={3}>
-                    <Button variant="contained" color="primary" fullWidth value={'%'} onClick={(e) => props.calcula(e.currentTarget.value)}> % </Button>
+                    <Button variant="contained" color="secondary" fullWidth value={'%'} onClick={(e) => props.calcula(e.currentTarget.value)}> % </Button>
                 </Grid>
                 <Grid item xs={3}>
-                    <Button variant="contained" color="primary" fullWidth value={'/'} onClick={(e) => props.calcula(e.currentTarget.value)}> ÷ </Button>
+                    <Button variant="contained" color="secondary" fullWidth value={'/'} onClick={(e) => props.calcula(e.currentTarget.value)}> ÷ </Button>
                 </Grid>
                 <Grid item xs={3}>
                     <Button variant="contained" color="primary" fullWidth value={'7'} onClick={(e) => props.calcula(e.currentTarget.value)}> 7 </Button>
@@ -33,7 +33,7 @@ function CalculatorBody(props) {
                     <Button variant="contained" color="primary" fullWidth value={'9'} onClick={(e) => props.calcula(e.currentTarget.value)}> 9 </Button>
                 </Grid>
                 <Grid item xs={3}>
-                    <Button variant="contained" color="primary" fullWidth value={'*'} onClick={(e) => props.calcula(e.currentTarget.value)}> x </Button>
+                    <Button variant="contained" color="secondary" fullWidth value={'*'} onClick={(e) => props.calcula(e.currentTarget.value)}> x </Button>
                 </Grid>
                 <Grid item xs={3}>
                     <Button variant="contained" color="primary" fullWidth value={'4'} onClick={(e) => props.calcula(e.currentTarget.value)}> 4 </Button>
@@ -45,7 +45,7 @@ function CalculatorBody(props) {
                     <Button variant="contained" color="primary" fullWidth value={'6'} onClick={(e) => props.calcula(e.currentTarget.value)}> 6 </Button>
                 </Grid>
                 <Grid item xs={3}>
-                    <Button variant="contained" color="primary" fullWidth value={'-'} onClick={(e) => props.calcula(e.currentTarget.value)}> - </Button>
+                    <Button variant="contained" color="secondary" fullWidth value={'-'} onClick={(e) => props.calcula(e.currentTarget.value)}> - </Button>
                 </Grid>
                 <Grid item xs={3}>
                     <Button variant="contained" color="primary" fullWidth value={'1'} onClick={(e) => props.calcula(e.currentTarget.value)}> 1 </Button>
@@ -57,7 +57,7 @@ function CalculatorBody(props) {
                     <Button variant="contained" color="primary" fullWidth value={'3'} onClick={(e) => props.calcula(e.currentTarget.value)}> 3 </Button>
                 </Grid>
                 <Grid item xs={3}>
-                    <Button variant="contained" color="primary" fullWidth value={'+'} onClick={(e) => props.calcula(e.currentTarget.value)}> + </Button>
+                    <Button variant="contained" color="secondary" fullWidth value={'+'} onClick={(e) => props.calcula(e.currentTarget.value)}> + </Button>
                 </Grid>
                 <Grid item xs={3}>
                     <Button variant="contained" color="primary" fullWidth value={'0'} onClick={(e) => props.calcula(e.currentTarget.value)}> 0 </Button>
@@ -66,7 +66,7 @@ function CalculatorBody(props) {
                     <Button variant="contained" color="primary" fullWidth value={'.'} onClick={(e) => props.calcula(e.currentTarget.value)}> . </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button variant="contained" color="success" fullWidth  value={'='} onClick={(e) => props.calcula(e.currentTarget.value)}> = </Button>
+                    <Button variant="contained" fullWidth  value={'='} onClick={(e) => props.calcula(e.currentTarget.value)}> = </Button>
                 </Grid>
             </Grid>
 
