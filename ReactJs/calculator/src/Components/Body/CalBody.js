@@ -10,12 +10,12 @@ function CalculatorBody(props) {
         <div>
             <Grid container spacing={5} >
                 <Grid item xs={3}>
-                    <Button variant="contained" color="primary" fullWidth value={'backspace'} onClick={(e) => props.calcula(e.currentTarget.value)} className = 'operador'>
+                    <Button variant="contained" color="error" fullWidth value={'backspace'} onClick={(e) => props.calcula(e.currentTarget.value)} className = 'operador'>
                         <Backspace />
                     </Button>
                 </Grid>
                 <Grid item xs={3}>
-                    <Button variant="contained" color="primary" fullWidth value={'C'} onClick={(e) => props.calcula(e.currentTarget.value)}> C </Button>
+                    <Button variant="contained" color="secondary" fullWidth value={'C'} onClick={(e) => props.calcula(e.currentTarget.value)}> C </Button>
                 </Grid>
                 <Grid item xs={3}>
                     <Button variant="contained" color="primary" fullWidth value={'%'} onClick={(e) => props.calcula(e.currentTarget.value)}> % </Button>
@@ -66,7 +66,7 @@ function CalculatorBody(props) {
                     <Button variant="contained" color="primary" fullWidth value={'.'} onClick={(e) => props.calcula(e.currentTarget.value)}> . </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button variant="contained" color="primary" fullWidth  value={'='} onClick={(e) => props.calcula(e.currentTarget.value)}> = </Button>
+                    <Button variant="contained" color="success" fullWidth  value={'='} onClick={(e) => props.calcula(e.currentTarget.value)}> = </Button>
                 </Grid>
             </Grid>
 
