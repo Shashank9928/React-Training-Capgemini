@@ -1,18 +1,20 @@
 import React from 'react';
-import { Paper } from '@material-ui/core';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
+// import Box from "@material-ui/core/Box";
 
 
 function Display(props) {
     return (
-        <div className='containerDisplay'>
-            <Paper  >
-                {props.numero1} {props.operador} {props.numero2}
-            </Paper>
-            <Paper>
-                <p className='resultado'>{props.resultado}</p>
-            </Paper>
-        </div>
+        
+            <div className='containerDisplay'>
+                <div className='numbers'  >
+                    <p >
+                    {props.number1} {props.operator} {props.number2}
+                    </p>
+                </div>
+                <div className='result'>
+                    <p >{props.result}</p>
+                </div>
+            </div >
     )
 }
 

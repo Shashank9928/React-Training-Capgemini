@@ -4,95 +4,100 @@ import Display from '../Display/Display'
 
 function Caculate() {
 
-    const [numeroDisplay1, setNumeroDisplay1] = useState('')
-    const [numeroDisplay2, setNumeroDisplay2] = useState('')
-    const [operadorClicado, setOperadorClicado] = useState('')
-    const [resultado, setResultado] = useState('')
+    const [numberDisplay1, setnumberDisplay1] = useState('')
+    const [numberDisplay2, setnumberDisplay2] = useState('')
+    const [operatorclicked, setoperatorclicked] = useState('')
+    const [result, setresult] = useState('')
 
-    const [operador, setOperador] = useState(false)
-    const [operador2, setOperador2] = useState(true)
-    const [primeiroClique, setPrimeiroClique] = useState(false)
-    const [primeiroCalculo, setPrimeiroCalculo] = useState(false)
+    const [operator, setoperator] = useState(false)
+    const [operator2, setoperator2] = useState(true)
+    const [firstclick, setfirstclick] = useState(false)
+    const [firstCalculate, setfirstCalculate] = useState(false)
 
 
-    const [calculo, setCalculo] = useState({
-        'primeiroNum': '',
-        'operador': '',
-        'segundoNum': '',
-        'ultimoNumero': ''
+    const [calculation, setcalculation] = useState({
+        'firstNum': '',
+        'operator': '',
+        'secondNum': '',
+        'lastNumber': ''
     })
 
     const reciveValue = (num) => {
-        if (operador === false) {
-            // Esse IF vai verificar se ja tiver um resultado na tela e clicar em um número, ele vai limpar e colocar o numero digitado
-            if (primeiroCalculo) {
+        if (operator === false) {
+            // This IF will check if there is already a result on the screen and click on a number, it will clear and put the number typed
+            if (firstCalculate) {
                 clearValues(num, true)
-                setPrimeiroCalculo(false)
+                setfirstCalculate(false)
             } if (num === '.') {
-                // Adicionando ponto para valor Float
-                calculo.primeiroNum += num
-                setNumeroDisplay1(numeroDisplay1 + num)
-                calculo.ultimoNumero = ''
+                // Adding point to Float value
+                calculation.firstNum += num
+                setnumberDisplay1(numberDisplay1 + num)
+                calculation.lastNumber = ''
             } else if (num === 'backspace') {
-                // Exclui o último valor da chave 'primeiroNum' do state calculo
-                setCalculo({
-                    'primeiroNum': calculo.primeiroNum.slice(0, -1),
-                    'operador': '',
-                    'segundoNum': ''
+                // Delete the last value of the 'firstNum' key from the state calculation
+                setcalculation({
+                    'firstNum': calculation.firstNum.slice(0, -1),
+                    'operator': '',
+                    'secondNum': ''
                 })
-                setNumeroDisplay1(numeroDisplay1)
+                setnumberDisplay1(numberDisplay1)
             } else {
-                // Adiciona o numero na tela/objeto
-                calculo.primeiroNum += num
-                setNumeroDisplay1(numeroDisplay1 + num)
-                calculo.ultimoNumero = ''
+
+                // Add the number to the screen/object
+                calculation.firstNum += num
+                setnumberDisplay1(numberDisplay1 + num)
+                calculation.lastNumber = ''
             }
         } else {
             if (num === '.') {
-                // Adicionando ponto para valor Float
-                calculo.segundoNum += num
-                setNumeroDisplay2(numeroDisplay2 + num)
+                // Adding point to Float value
+                calculation.secondNum += num
+                setnumberDisplay2(numberDisplay2 + num)
             } else if (num === 'backspace') {
-                // Exclui o último valor da chave 'segundoNum' do state calculo e mantem os outros
-                setCalculo({
-                    'primeiroNum': calculo.primeiroNum,
-                    'operador': calculo.operador,
-                    'segundoNum': calculo.segundoNum.slice(0, -1),
+                // Delete the last value of the 'secondNum' key from the state calculation and keep the others
+                setcalculation({
+                    'firstNum': calculation.firstNum,
+                    'operator': calculation.operator,
+                    'secondNum': calculation.secondNum.slice(0, -1),
                 })
             } else {
-                // Adiciona o numero na tela/objeto
-                calculo.segundoNum += num
-                setNumeroDisplay2(numeroDisplay2 + num)
+
+                // Add the number to the screen/object
+                calculation.secondNum += num
+                setnumberDisplay2(numberDisplay2 + num)
             }
         }
     }
 
-    // Função para receber o operador clicado
-    const reciveOperator = (num) => {
-        calculo['operador'] = num
-        setOperadorClicado(num)
-        setOperador(true)
-        setOperador2(false)
+    // Function to receive the clicked operator
+    const receiveOperator = (num) => {
+        calculation['operator'] = num
+        console.log(calculation)
+        setoperatorclicked(num)
+        setoperator(true)
+        setoperator2(false)
 
-        // Verifica se ja houve o primeiro clique no '=', se tiver, ele vai adicionar o ultimo numero e a operação
-        // para fazer outro cálculo.
-        if (primeiroClique) {
-            setCalculo({
-                'primeiroNum': calculo.ultimoNumero,
-                'operador': calculo.operador,
-                'segundoNum': '',
+        // Check if there was already the first click on the '=', if so, it will add the last number and the operation
+        // to do another calculation.
+        if (firstclick) {
+            setcalculation({
+                'firstNum': calculation.lastNumber,
+                'operator': calculation.operator,
+                'secondNum': '',
             })
-            setNumeroDisplay1(calculo.ultimoNumero)
-            setNumeroDisplay2('')
+            setnumberDisplay1(calculation.lastNumber)
+            setnumberDisplay2('0')
         }
 
-        setPrimeiroClique(true)
+        setfirstclick(true)
     }
 
-    // Função para fazer o calculo com os valores recebidos
-    const fazOperacao = (num) => {
-        // Objeto com as funções respectivas de cada tipo de operação
-        const operacoes = {
+
+    // Function to do the calculation with the received values
+    const doOperation = (num) => {
+
+        // Object with the respective functions of each type of operation
+        const operations = {
             '+': (num1, num2) => (parseFloat(num1) + parseFloat(num2)),
             '-': (num1, num2) => (parseFloat(num1) - parseFloat(num2)),
             '/': (num1, num2) => (parseFloat(num1) / parseFloat(num2)),
@@ -100,79 +105,85 @@ function Caculate() {
             '*': (num1, num2) => (parseFloat(num1) * parseFloat(num2)),
         }
 
-        // Jogando o resultado da operação na tela
-        let result = operacoes[calculo['operador']](calculo.primeiroNum, calculo.segundoNum)
-        calculo.ultimoNumero = result
-        setResultado(result)
+        // Playing the result of the operation on the screen
+        console.log(calculation)
+        let result = operations[calculation['operator']](calculation.firstNum, calculation.secondNum)
+        calculation.lastNumber = result
+        setresult(result)
 
-        // Ajustando os states de verificação
-        setOperador2(true)
-        setOperador(false)
-        setPrimeiroCalculo(true)
+
+        // Adjusting verification states
+        setoperator2(true)
+        setoperator(false)
+        setfirstCalculate(true)
     }
 
-    // Função para limpar o display e valores do objeto, para a próxima operação
+
+    // Function to clear the display and object values, for the next operation
     const clearValues = (num, calculaDnv) => {
-        // Esse IF vai verificar se ja tiver um resultado na tela e clicar em um número, ele vai limpar e colocar o numero digitado
+        // This IF will check if there is already a result on the screen and click on a number, it will clear and put the number typed
         if (calculaDnv) {
-            setCalculo({
-                'primeiroNum': num,
-                'operador': calculo.operador,
-                'segundoNum': '',
+            setcalculation({
+                'firstNum': num,
+                'operator': calculation.operator,
+                'secondNum': '',
             })
 
-            setPrimeiroClique(false)
-            setResultado('')
-            setNumeroDisplay1('')
-            setNumeroDisplay2('')
-            setOperadorClicado('')
+            setfirstclick(false)
+            setresult('')
+            setnumberDisplay1('')
+            setnumberDisplay2('')
+            setoperatorclicked('')
         } else {
-            setCalculo({
-                'primeiroNum': '',
-                'operador': calculo.operador,
-                'segundoNum': '',
+            setcalculation({
+                'firstNum': '',
+                'operator': calculation.operator,
+                'secondNum': '',
             })
 
-            setPrimeiroClique(false)
-            setResultado('')
-            setNumeroDisplay1('')
-            setNumeroDisplay2('')
-            setOperadorClicado('')
+            setfirstclick(false)
+            setresult('')
+            setnumberDisplay1('')
+            setnumberDisplay2('')
+            setoperatorclicked('')
         }
     }
 
-    // Função para mostrar mensagem de erro
-    const mostraError = () => {
-        setResultado('Error')
+    // Function to show error message
+    const showError = () => {
+        setresult('Error')
     }
 
-    // Função geral responsavel por suportar as outras funções e fazer as verificações necessárias para executar cada função de acordo com o clique do botão
+    // General function responsible for supporting the other functions and making the necessary checks to execute each function according to the button click
     const calcula = (num) => {
-        console.log(num);
+        console.log("calcula recive: " + num)
         if (!isNaN(num) || num === '.' || num === 'backspace') {
             reciveValue(num)
-        } else if ((num === '+' || num === '-' || num === '/' || num === '*' || num === '%') & operador2) {
-            reciveOperator(num)
+        } else if ((num === '+' || num === '-' || num === '/' || num === '*' || num === '%') & operator2) {
+            console.log("Operator:" + num);
+            receiveOperator(num)
         } else if (num === 'C') {
             clearValues()
         } else if (num === '=') {
-            if (calculo.segundoNum !== '') {
-                fazOperacao(num)
+            if (calculation.secondNum !== '') {
+                console.log("Operator:" + num);
+                doOperation(num)
             } else {
-                mostraError()
+                showError()
             }
         }
+        console.log("No Operation")
     }
 
     return (
-        <div>
+        <div className='calculator' >
             <Display
-                resultado = {resultado} 
-                numero1 = {calculo.primeiroNum}
-                numero2 = {calculo.segundoNum}
-                operador = {operadorClicado}
+                result={result}
+                number1={calculation.firstNum}
+                number2={calculation.secondNum}
+                operator={operatorclicked}
             />
-            <CalculatorBody calcula = {calcula} />
+            <CalculatorBody calcula={calcula} />
         </div>
     );
 }
