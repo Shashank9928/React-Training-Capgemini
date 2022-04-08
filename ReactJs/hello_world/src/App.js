@@ -19,7 +19,11 @@ import React from "react";
 // import ParentError from "./components/ErrorHandling/ParentHandler";
 
 
-import ReactParentHook from "./components/ReactHooks/ReactParentHook";
+// import ReactParentHook from "./components/ReactHooks/ReactParentHook";
+
+import ParentImperative from "./components/Hooks/ImperativeHandle/ParentImperative";
+import UseLayoutTutorial from "./components/Hooks/BasicHooks";
+import { UseRefTutorial } from "./components/Hooks/BasicHooks";
 
 
 function App() {
@@ -56,7 +60,11 @@ function App() {
       {/* <ParentComponent /> */}
       {/* <ParentError /> */}
 
-      <ReactParentHook />
+      {/* <ReactParentHook /> */}
+
+      <UseLayoutTutorial />
+      <ParentImperative />
+      <UseRefTutorial />
     </div>
   );
 }
