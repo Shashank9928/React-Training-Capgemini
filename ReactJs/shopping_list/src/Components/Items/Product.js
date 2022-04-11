@@ -12,7 +12,7 @@ export default function Product(props) {
                     </p>
                     <div className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
                         <p className="small mb-0"><i className="fa fa-picture-o mr-2"></i><span className="font-weight-bold">
-                            {props.price}  Rs
+                        &euro; {props.price}
                         </span></p>
                         <Button variant="contained" value={props.id} color="primary" className="small" onClick={(e) => props.Cart(e.currentTarget.value)} >Add to cart</Button>
                     </div>

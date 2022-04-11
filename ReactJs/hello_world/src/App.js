@@ -21,10 +21,12 @@ import React from "react";
 
 // import ReactParentHook from "./components/ReactHooks/ReactParentHook";
 
-import ParentImperative from "./components/Hooks/ImperativeHandle/ParentImperative";
-import UseLayoutTutorial from "./components/Hooks/BasicHooks";
-import { UseRefTutorial } from "./components/Hooks/BasicHooks";
+// import ParentImperative from "./components/Hooks/ImperativeHandle/ParentImperative";
+// import UseLayoutTutorial from "./components/Hooks/BasicHooks";
+// import { UseRefTutorial } from "./components/Hooks/BasicHooks";
+// import GetRequest from "./components/HTTPRequest/getRequest";
 
+import AxiosCalls from "./components/HTTPRequest/httpRequest";
 
 function App() {
   return (
@@ -62,9 +64,12 @@ function App() {
 
       {/* <ReactParentHook /> */}
 
-      <UseLayoutTutorial />
+      {/* <UseLayoutTutorial />
       <ParentImperative />
       <UseRefTutorial />
+      <GetRequest /> */}
+
+      <AxiosCalls />
     </div>
   );
 }

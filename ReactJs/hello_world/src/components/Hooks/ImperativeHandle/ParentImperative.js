@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, {  useRef } from "react";
 import Counter from "./Counter";
 function ParentImperative(props) {
   const buttonRef = useRef(null);
