@@ -7,20 +7,24 @@ export default function GetAllStatusReport() {
     const [statusReports, setStatusReports] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [userId, setUserId] = useState(0);
+    const [userRole, setUserRole] = useState("Admin");
 
     useEffect(() => {
-        const URL = "http://127.0.0.1:8080/statusReport/allStatusReport";
-        axios.get(URL)
-            .then(res => {
-                setStatusReports(res.data);
-                setIsLoading(false);
-                console.log(res.data);
-            }
-            )
-            .catch(err => {
-                console.log(err);
-            }
-            )
+        if (userRole === "Admin") {
+            const URL = "http://127.0.0.1:8080/statusReport/allStatusReport";
+            axios.get(URL)
+                .then(res => {
+                    setStatusReports(res.data);
+                    setIsLoading(false);
+                    console.log(res.data);
+                }
+                )
+                .catch(err => {
+                    console.log(err);
+                }
+                )
+        }
+
     }, []);
 
     return (
