@@ -3,24 +3,24 @@ import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import WorkIcon from "@material-ui/icons/Work";
 import GroupWorkIcon from "@material-ui/icons/GroupWork";
 
-export default function ComplainsCard() {
+export default function ComplainsCard(props) {
 
     return (
         <div>
-            <article class="Complain_card light blue">
+            <article className="Complain_card light blue">
 
-                <div class="Complain_card__text t-dark">
-                    <h1 class="Complain_card__title blue">Complain Title</h1>
-                    <div class="Complain_card__subtitle small">
-                        <time datetime="2020-05-25 12:00:00">
-                            <CalendarTodayIcon/> Mon, May 25th 2020
+                <div className="Complain_card__text t-dark">
+                    <h1 className="Complain_card__title blue">{props.complain.complianceType}</h1>
+                    <div className="Complain_card__subtitle small">
+                        <time>
+                            <CalendarTodayIcon/> {props.complain.complianceDate}
                         </time>
                     </div>
-                    <div class="Complain_card__bar"></div>
-                    <div class="Complain_card__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-                    <ul class="Complain_card__tagbox">
-                        <li class="tag__item"> <WorkIcon/> Department</li>
-                        <li class="tag__item color3"> <GroupWorkIcon/> Department</li>
+                    <div className="Complain_card__bar"></div>
+                    <div className="Complain_card__preview-txt">{props.complain.complianceDescription}</div>
+                    <ul className="Complain_card__tagbox">
+                        <li className="tag__item"> <WorkIcon/> {props.complain.complianceStatus}</li>
+                        <li className="tag__item color3"> <GroupWorkIcon/> {props.complain.department.departName}</li>
                     </ul> 
                 </div>
             </article>

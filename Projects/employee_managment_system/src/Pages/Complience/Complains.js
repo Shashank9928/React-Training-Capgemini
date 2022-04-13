@@ -15,8 +15,6 @@ export default function Complains() {
         if (userRole === "Admin") {
 
             let URL = "http://127.0.0.1:8080/compliance/getAllCompliance";
-            // For Trial run remove after
-            URL = "https://jsonplaceholder.typicode.com/users";
             axios.get(URL)
                 .then(res => {
                     setComplains(res.data);
@@ -46,7 +44,7 @@ export default function Complains() {
     return (
         <div>
             <section>
-                <div class="container py-2">
+                <div className="container py-2">
                     <div className="color3 head-font-1" >
                         <h1>Complains</h1>
                         <hr />
@@ -62,7 +60,7 @@ export default function Complains() {
                         <div >
                             {complains.map(complain => (
                                 
-                                    <ComplainsCard complain={complain} />
+                                    <ComplainsCard key={complain.complianceId} complain={complain} />
                             ))}
                         </div>
                     }

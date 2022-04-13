@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import Statusreport from "../../Components/Complience/Statusreport";
+
 
 export default function GetAllStatusReport() {
     const [statusReports, setStatusReports] = useState([]);
@@ -29,37 +31,29 @@ export default function GetAllStatusReport() {
 
     return (
         <div>
-            <h1>Status Report</h1>
-            {isLoading ? <h1>Loading...</h1> :
+            <section>
+                <div className="container py-2">
+                    <div className="color3 head-font-1" >
+                        <h1>Status Reports</h1>
+                        <hr />
+                    </div>
+                    {isLoading ?
+                        <div className="d-flex justify-content-center">
+                            <div className="spinner-border" role="status">
+                                <span className="sr-only"></span>
+                            </div>
+                        </div> :
 
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>comments</th>
-                            <th>details</th>
-                            <th>d_id</th>
-                            <th>u_id</th>
-                            <th>c_id</th>
-                            <th>createdDate</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {statusReports.map(statusReport => (
-                            <tr key={statusReport.statusReportId}>
-                                <td>{statusReport.comments}</td>
-                                <td>{statusReport.details}</td>
-                                <td>{statusReport.d_id}</td>
-                                <td>{statusReport.u_id}</td>
-                                <td>{statusReport.c_id}</td>
-                                <td>{statusReport.createdDate}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-
-            }
+                        <div >
+                            {statusReports.map(statusReport => (
+                                <Statusreport key={statusReport.statusReportId} statusReport={statusReport} />
+                            ))}
+                        </div>
+                    }
+                </div>
+            </section>
         </div>
+
     );
 
 
