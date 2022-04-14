@@ -19,6 +19,10 @@ export default function Complains() {
                 .then(res => {
                     setComplains(res.data);
                     setIsLoading(false);
+                    res.data.map(complain => {
+                        console.log(complain);
+                    }
+                    )
                 }
                 )
                 .catch(err => {

@@ -16,8 +16,8 @@ export default function AddStatusReport() {
         const URL = "http://127.0.0.1:8080/statusReport/addStatusReport";
 
         const statusReport = {
-            "comments": "comments",
-            "details": "First Status Report",
+            "comments": comments,
+            "details": details,
             "d_id": 1,
             "u_id": 1,
             "c_id": 6

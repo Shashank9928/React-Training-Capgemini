@@ -20,8 +20,8 @@ export default function Statusreport(props) {
                         <li className="tag__item color3"> <NotIntrestedIcon/> {props.statusReport.c_id}</li>
                     {props.statusReport.department?<li className="tag__item color3"> <GroupWorkIcon/> {props.statusReport.department.departName}</li>: <li className="tag__item color3"> <GroupWorkIcon/></li> }
                     </ul> 
-                        <time datetime="2020-05-25 12:00:00">
-                            <CalendarTodayIcon/> Mon, May 25th 2020
+                        <time>
+                            <CalendarTodayIcon/> {props.statusReport.createdDate}
                         </time>
                     </div>
                     <div className="Complain_card__bar"></div>
