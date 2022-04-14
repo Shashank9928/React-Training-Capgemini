@@ -13,11 +13,35 @@ import GetAllDepartment from "./Pages/Department/GetAllDepartment";
 import AddEmployee from "./Components/Employee/AddEmployee";
 import ListEmployee from "./Components/Employee/ListEmployee";
 import UpdateEmployee from "./Components/Employee/UpdateEmployee";
+// Authentication Module Imports
+import Login from "./Components/Home/login.component";
+import SignUp from "./Components/Home/signup.component";
+import GetAllUsers from "./Components/Home/GetAllUsers";
+
+
 import Footer from "./Components/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import Navbar from "./Components/NavBar/Nav";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch,Redirect } from "react-router-dom";
 
+function PrivateRoute({ component: Component, authed, ...rest }) {
+  let tokenData = Navbar.Token();
+
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        tokenData ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{ pathname: "/sign-in", state: { from: props.location } }}
+          />
+        )
+      }
+    />
+  );
+}
 
 
 function App() {
@@ -26,7 +50,7 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/" >
+          <Route exact path="/Home" >
             <Home />
           </Route>
           <Route path="/raisecomplain" >
@@ -60,6 +84,13 @@ function App() {
           <Route path="/updateemployee" >
             <UpdateEmployee />
           </Route>
+          <Route exact path="/" component={Login} />
+          <Route path="/sign-in" component={Login} />
+          <Route path="/sign-up" component={SignUp} />
+
+          <PrivateRoute path="/home" component={Home} />
+          <PrivateRoute path="/UserList" component={GetAllUsers} />
+
         </Switch>
         <Footer />
       </Router>
