@@ -59,6 +59,29 @@ export default function Navbar() {
                   </li>
                 </ul>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="departDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Department
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="departDropdown">
+                  <li className="dropdown-item">
+                    <NavLink activeClassName="active" className="" to="/adddepartment" >
+                      Add Department
+                    </NavLink>
+                  </li>
+                  <li className="dropdown-item">
+                    <NavLink activeClassName="active" className="" to="/deletedepartment" >
+                      Delete Department
+                    </NavLink>
+                  </li>
+                  <li className="dropdown-item">
+                    <NavLink activeClassName="active" className="" to="/getalldepartment" >
+                      Department
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
+
             </ul>
           </div>
         </nav>
