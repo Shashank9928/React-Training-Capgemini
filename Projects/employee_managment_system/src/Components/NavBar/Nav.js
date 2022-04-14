@@ -59,6 +59,7 @@ export default function Navbar() {
                   </li>
                 </ul>
               </li>
+              {/* Department */}
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="departDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Department
@@ -81,6 +82,30 @@ export default function Navbar() {
                   </li>
                 </ul>
               </li>
+              {/* Employee */}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="employeeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Employee
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="employeeDropdown">
+                  <li className="dropdown-item">
+                    <NavLink activeClassName="active" className="" to="/addemployee" >
+                      Add Employee
+                    </NavLink>
+                  </li>
+                  <li className="dropdown-item">
+                    <NavLink activeClassName="active" className="" to="/updateemployee" >
+                      update employee
+                    </NavLink>
+                  </li>
+                  <li className="dropdown-item">
+                    <NavLink activeClassName="active" className="" to="/listemployee" >
+                      Employee
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
+
 
             </ul>
           </div>

@@ -1,11 +1,18 @@
 import React from "react";
+
+// Complience Module Imports
 import RaiseComplain from "./Pages/Complience/RaiseComplain";
 import Complains from "./Pages/Complience/Complains";
 import AddStatusReport from "./Pages/Complience/AddStatusReport";
 import GetAllStatusReport from "./Pages/Complience/GetAllStatusReport";
+// Department Module Imports
 import AddDepartment from "./Pages/Department/AddDepartment";
 import DeleteDepartment from "./Pages/Department/DeleteDepartment";
 import GetAllDepartment from "./Pages/Department/GetAllDepartment";
+// Employee module Imports
+import AddEmployee from "./Components/Employee/AddEmployee";
+import ListEmployee from "./Components/Employee/ListEmployee";
+import UpdateEmployee from "./Components/Employee/UpdateEmployee";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import Navbar from "./Components/NavBar/Nav";
@@ -43,6 +50,15 @@ function App() {
           </Route>
           <Route path="/getalldepartment" >
             <GetAllDepartment />
+          </Route>
+          <Route path="/addemployee" >
+            <AddEmployee />
+          </Route>
+          <Route path="/listemployee" >
+            <ListEmployee />
+          </Route>
+          <Route path="/updateemployee" >
+            <UpdateEmployee />
           </Route>
         </Switch>
         <Footer />
