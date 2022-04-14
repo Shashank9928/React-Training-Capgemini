@@ -10,6 +10,10 @@ a {
   color: inherit;
 }
 
+.clear {
+  clear: both;
+}
+
 .color1 {
   color: #131922;
 }

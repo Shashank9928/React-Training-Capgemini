@@ -4,12 +4,12 @@ import "./css/footer.css";
 export default function Footer() {
 
     return (
-        <footer class="footer">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-12 text-center">
-                        <h2 class="footer-heading"><div class="logo">Employee.com</div></h2>
-                        <p class="menu">
+        <footer className="footer">
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-md-12 text-center">
+                        <h2 className="footer-heading"><div className="logo">Employee.com</div></h2>
+                        <p className="menu">
                             <a href="#">Home</a>
                             <a href="#">Employee</a>
                             <a href="#">Department</a>
@@ -20,9 +20,9 @@ export default function Footer() {
                         </p>
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-md-12 text-center">
-                        <p class="copyright">
+                <div className="row mt-5">
+                    <div className="col-md-12 text-center">
+                        <p className="copyright">
                             Copyright &copy; All rights reserved
                         </p>
                     </div>

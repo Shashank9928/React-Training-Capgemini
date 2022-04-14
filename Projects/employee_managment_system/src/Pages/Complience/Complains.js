@@ -14,7 +14,7 @@ export default function Complains() {
     useEffect(() => {
         if (userRole === "Admin") {
 
-            let URL = "http://127.0.0.1:8080/compliance/getAllCompliance";
+            const URL = "http://127.0.0.1:8080/compliance/getAllCompliance";
             axios.get(URL)
                 .then(res => {
                     setComplains(res.data);
