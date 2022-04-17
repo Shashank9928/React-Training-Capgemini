@@ -63,7 +63,7 @@ export default class Login extends Component {
   render() {
     return (
       <div className="auth-wrapper">
-        <div class="CardBox">
+        <div className="CardBox">
           <Form
             onSubmit={this.handleLogin}
             ref={(c) => {
@@ -100,7 +100,7 @@ export default class Login extends Component {
 
               <br />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <button type="submit" className="btn btn-primary btn-block">
                 Login
               </button>

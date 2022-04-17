@@ -110,8 +110,8 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div class="CardBox-wrapper">
-        <div class="CardBox">
+      <div className="CardBox-wrapper">
+        <div className="CardBox">
           <form onSubmit={this.userDataSubmit.bind(this)}>
             <h3>Sign Up</h3>
             <hr />

@@ -24,48 +24,48 @@ export default function Home() {
                 </div>
             </header>
             {/* Service Section Start */}
-            <section class="god-section service-section">
-                <div class="container">
-                    <div class="row d-flex service-info">
-                        <div class="col-md-6 col-lg-3 d-flex">
-                            <div class="align-self-stretch box p-4 text-center">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="">
-                                        <i class="fa-solid fa-list-check"></i>
+            <section className="god-section service-section">
+                <div className="container">
+                    <div className="row d-flex service-info">
+                        <div className="col-md-6 col-lg-3 d-flex">
+                            <div className="align-self-stretch box p-4 text-center">
+                                <div className="icon d-flex align-items-center justify-content-center">
+                                    <span className="">
+                                        <i className="fa-solid fa-list-check"></i>
                                     </span>
                                 </div>
-                                <h3 class="mb-4">Managment</h3>
+                                <h3 className="mb-4">Managment</h3>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3 d-flex">
-                            <div class="align-self-stretch box p-4 text-center">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="">
-                                        <i class="fa-solid fa-briefcase"></i>
+                        <div className="col-md-6 col-lg-3 d-flex">
+                            <div className="align-self-stretch box p-4 text-center">
+                                <div className="icon d-flex align-items-center justify-content-center">
+                                    <span className="">
+                                        <i className="fa-solid fa-briefcase"></i>
                                     </span>
                                 </div>
-                                <h3 class="mb-4">Employee</h3>
+                                <h3 className="mb-4">Employee</h3>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3 d-flex">
-                            <div class="align-self-stretch box p-4 text-center">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="">
-                                        <i class="fa-solid fa-building-user"></i>
+                        <div className="col-md-6 col-lg-3 d-flex">
+                            <div className="align-self-stretch box p-4 text-center">
+                                <div className="icon d-flex align-items-center justify-content-center">
+                                    <span className="">
+                                        <i className="fa-solid fa-building-user"></i>
                                     </span>
                                 </div>
-                                <h3 class="mb-4">Department</h3>
+                                <h3 className="mb-4">Department</h3>
 
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3 d-flex">
-                            <div class="align-self-stretch box p-4 text-center">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="">
-                                        <i class="fa-solid fa-users"></i>
+                        <div className="col-md-6 col-lg-3 d-flex">
+                            <div className="align-self-stretch box p-4 text-center">
+                                <div className="icon d-flex align-items-center justify-content-center">
+                                    <span className="">
+                                        <i className="fa-solid fa-users"></i>
                                     </span>
                                 </div>
-                                <h3 class="mb-4">Users</h3>
+                                <h3 className="mb-4">Users</h3>
 
                             </div>
                         </div>
