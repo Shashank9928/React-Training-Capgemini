@@ -60,7 +60,7 @@ export default class Navbar extends React.Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ">
                 <li className="nav-item ">
-                  <NavLink exact activeClassName="active" className="nav-link" to="/" >
+                  <NavLink exact activeClassName="active" className="nav-link" to="/Home" >
                     Home
                   </NavLink>
                 </li>

@@ -81,7 +81,7 @@ function App() {
           <Route path="/listemployee" >
             <ListEmployee />
           </Route>
-          <Route path="/updateemployee" >
+          <Route path="/updateemployee/:id" >
             <UpdateEmployee />
           </Route>
           <Route exact path="/" component={Login} />
